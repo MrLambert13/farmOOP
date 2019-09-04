@@ -1,6 +1,5 @@
 <?php
 
-
 include_once 'core/Cow.php';
 include_once 'core/Chicken.php';
 
@@ -21,7 +20,7 @@ class Farm
   /**
    * Initialization farm, add animals, get products and show summ of products
    */
-  function __construct()
+  public function __construct()
   {
     echo "Add animals to farm...";
     for ($i = 0; $i < 10; $i++) {
