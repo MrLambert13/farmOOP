@@ -4,14 +4,23 @@
 include_once 'core/Cow.php';
 include_once 'core/Chicken.php';
 
+/**
+ * Class farm, store all products and animals
+ * @property array $cows Array of cows in the farm
+ * @property array $chickens Array of chickens in the farm
+ * @property integer $milk Count of milk in the farm
+ * @property integer $eggs Count of eggs in the farm
+ */
 class Farm
 {
   private $cows = [];
   private $chickens = [];
   private $milk = 0;
   private $eggs = 0;
-  private $products = 0;
 
+  /**
+   * Initialization farm, add animals, get products and show summ of products
+   */
   function __construct()
   {
     echo "Add animals to farm...";
@@ -28,11 +37,9 @@ class Farm
     $this->getProducts();
   }
 
-  public function getProducts()
-  {
-    echo "Summ of products: milk {$this->milk} l., eggs {$this->eggs} pts.\n";
-  }
-
+  /**
+   * Get products from all animals
+   */
   public function harvest()
   {
     echo "Get products from animals...";
@@ -45,21 +52,36 @@ class Farm
     echo "Done\n";
   }
 
+  /**
+   * Show summ of products in the farm
+   */
+  public function getProducts()
+  {
+    echo "Summ of products: milk {$this->milk} l., eggs {$this->eggs} pts.\n";
+  }
+
+  /**
+   * Add a cow in the farm
+   */
   public function addCow()
   {
     array_push($this->cows, new Cow);
     echo "Add cow complete \n";
   }
 
+  /**
+   * Add a chicken in the farm
+   */
   public function addChicken()
   {
-    array_push($this->chickens, new Cow);
+    array_push($this->chickens, new Chicken);
     echo "Add chicken complete \n";
   }
 }
 
-$myFarm = new Farm;
+$myFarm = new Farm; //create the farm
 
+//Navigation menu
 do {
   echo "Press: 1 - add cow, 2 - add chicken, 3 - get product, 4 - summ product, 5 - exit\n";
 
