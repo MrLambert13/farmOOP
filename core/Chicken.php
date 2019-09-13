@@ -7,6 +7,8 @@ require_once 'FarmAnimal.php';
  */
 class Chicken extends FarmAnimal
 {
+  protected static $productName = 'eggs';
+
   public function __construct()
   {
     parent::__construct();
