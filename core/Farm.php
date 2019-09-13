@@ -57,10 +57,14 @@ class Farm
    */
   public function getProducts()
   {
-    foreach ($this->products as $key => $value) {
-      # code...
+    $result = 'In farm: ';
+
+    foreach ($this->products as $product => $count) {
+      $result .= $product === array_key_last($this->products)
+        ? "{$count} {$product}.\n"
+        : "{$count} {$product},";
     }
-    var_dump($this->products);
+    echo $result;
   }
 
   /**
