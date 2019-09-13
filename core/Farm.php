@@ -5,28 +5,17 @@ require_once 'Animal.php';
 /**
  * Class farm, store all products and animals
  * @property array $animals Array of animals in the farm
- * @property array $product Array of product
+ * @property array $products Array of products
  */
 class Farm
 {
   private $animals = [];
-  private $product = [];
-
-  /**
-   * Initialization farm, add animals, get products and show summ of products
-   */
-  public function __construct()
-  {
-
-    /*
-
-    $this->harvest();
-    $this->getProducts(); */ }
+  private $products = [];
 
   /**
    * Add animals in the farm
    */
-  public function addAnimals(Animal $animal, int $count)
+  public function addAnimals(Animal $animal, int $count = 1)
   {
     echo "Add animals to farm...";
 
@@ -51,25 +40,15 @@ class Farm
 
     foreach ($this->animals as $animals) {
       foreach ($animals as $animal) {
-        var_dump($animal);
-
         $prodName = $animal->getProductName();
-        $product = $animal->getProductivity();
-        $this->product[$prodName] = array_key_exists($prodName, $this->product)
-          ? $this->product[$prodName] += $product
-          : $this->product[$prodName] = $product;
-        echo $product;
+        $productCount = $animal->getProductivity();
+        //Add products in main array
+        $this->products[$prodName] = array_key_exists($prodName, $this->products)
+          ? $this->products[$prodName] += $productCount
+          : $this->products[$prodName] = $productCount;
       }
     }
-    var_dump($this->product);
 
-    /*
-    foreach ($this->cows as $cow) {
-      $this->milk += $cow->getProductivity();
-    }
-    foreach ($this->chickens as $chicken) {
-      $this->eggs += $chicken->getProductivity();
-    } */
     echo "Done\n";
   }
 
@@ -78,7 +57,10 @@ class Farm
    */
   public function getProducts()
   {
-    echo "Summ of products: milk {$this->milk} l., eggs {$this->eggs} pts.\n";
+    foreach ($this->products as $key => $value) {
+      # code...
+    }
+    var_dump($this->products);
   }
 
   /**

@@ -7,24 +7,26 @@ include_once 'core/Farm.php';
 
 
 $myFarm = new Farm; //create the farm
-$myFarm->addAnimals(new Cow, 1);
-$myFarm->addAnimals(new Cow, 2);
-$myFarm->addAnimals(new Chicken, 2);
+
+// Initialization farm, add animals, get products and show summ of products
+$myFarm->addAnimals(new Cow, 10);
+$myFarm->addAnimals(new Chicken, 20);
 $myFarm->harvest();
+$myFarm->getProducts();
 
 
 //Navigation menu
-/* do {
+do {
   echo "Press: 1 - add cow, 2 - add chicken, 3 - get product, 4 - summ product, 5 - exit\n";
 
   $input = readline();
 
   switch ($input) {
     case '1':
-      $myFarm->addCow();
+      $myFarm->addAnimals(new Cow);
       break;
     case '2':
-      $myFarm->addChicken();
+      $myFarm->addAnimals(new Chicken);
       break;
     case '3':
       $myFarm->harvest();
@@ -33,4 +35,4 @@ $myFarm->harvest();
       $myFarm->getProducts();
       break;
   }
-} while ($input !== '5'); */
+} while ($input !== '5');
