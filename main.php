@@ -14,7 +14,6 @@ $myFarm->addAnimals(new Chicken, 20);
 $myFarm->harvest();
 $myFarm->getProducts();
 
-
 //Navigation menu
 do {
   echo "Press: 1 - add cow, 2 - add chicken, 3 - get product, 4 - summ product, 5 - exit\n";

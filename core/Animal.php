@@ -3,7 +3,6 @@
 /**
  * Animal interface
  */
-
 interface Animal
 {
   public function getProductivity();

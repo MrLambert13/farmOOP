@@ -14,6 +14,9 @@ class Farm
 
   /**
    * Add animals in the farm
+   *
+   * @param Animal $animal Type of animals which add in farm, must release Animal interface
+   * @param int $count How much animals will add, if null add an animal
    */
   public function addAnimals(Animal $animal, int $count = 1)
   {
@@ -65,23 +68,5 @@ class Farm
         : "{$count} {$product},";
     }
     echo $result;
-  }
-
-  /**
-   * Add a cow in the farm
-   */
-  public function addCow()
-  {
-    array_push($this->cows, new Cow);
-    echo "Add cow complete \n";
-  }
-
-  /**
-   * Add a chicken in the farm
-   */
-  public function addChicken()
-  {
-    array_push($this->chickens, new Chicken);
-    echo "Add chicken complete \n";
   }
 }
