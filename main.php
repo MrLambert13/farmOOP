@@ -9,8 +9,12 @@ use core\{Cow, Chicken, Farm};
 $myFarm = new Farm; //create the farm
 
 // Initialization farm, add animals, get products and show summ of products
-$myFarm->addAnimals(new Cow, 1);
-$myFarm->addAnimals(new Chicken, 2);
+for ($i = 0; $i < 3; $i++) {
+  $myFarm->addAnimals(new Cow);
+}
+for ($i = 0; $i < 10; $i++) {
+  $myFarm->addAnimals(new Chicken);
+}
 $myFarm->harvest();
 $myFarm->getProducts();
 
