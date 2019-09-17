@@ -1,6 +1,8 @@
 <?php
 
-require_once 'Animal.php';
+namespace core;
+
+use core\Animal;
 
 /**
  * Class of any animal in farm

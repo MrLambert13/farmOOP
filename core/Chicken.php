@@ -1,6 +1,8 @@
 <?php
 
-require_once 'FarmAnimal.php';
+namespace core;
+
+use core\FarmAnimal;
 
 /**
  * Class for cow, can make from 0 to 1 eggs

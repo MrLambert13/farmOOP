@@ -1,0 +1,18 @@
+{
+  "name": "user/farm-oop",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mr Lambert13",
+      "email": "lam_13@mail.ru"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "core\\": "core",
+      "app\\": "app"
+    }
+  }
+}

@@ -1,6 +1,8 @@
 <?php
 
-require_once 'Animal.php';
+namespace core;
+
+use core\Animal;
 
 /**
  * Class farm, store all products and animals
@@ -68,5 +70,9 @@ class Farm
         : "{$count} {$product},";
     }
     echo $result;
+  }
+  public function getAnimals()
+  {
+    var_dump($this->animals);
   }
 }
